@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `LUT Shopify Store`,
@@ -6,6 +10,15 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-source-shopify",
+      options: {
+        shopName: "lut-test-store",
+        accessToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
+        verbose: true,
+        paginationSize: 250,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
