@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -14,7 +14,7 @@ module.exports = {
       resolve: "gatsby-source-shopify",
       options: {
         shopName: "lut-test-store",
-        accessToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
+        accessToken: process.env.GATSBY_SHOPIFY_STOREFRONT_TOKEN,
         verbose: true,
         paginationSize: 250,
       },
@@ -41,4 +41,4 @@ module.exports = {
       },
     },
   ],
-}
+};
