@@ -10,6 +10,7 @@ const PRODUCTS_LISTING_QUERY = graphql`
           id
           publishedAt(formatString: "YYYY")
           title
+          handle
           images {
             localFile {
               childImageSharp {
