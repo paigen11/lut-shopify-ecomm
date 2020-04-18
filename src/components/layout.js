@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-
+import SEO from "../components/seo";
 import Header from "./header";
 import { StoreContext, client } from "../context/StoreContext";
 import "./layout.css";
@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
 
   return (
     <StoreContext.Provider value={{ client }}>
+      <SEO></SEO>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
